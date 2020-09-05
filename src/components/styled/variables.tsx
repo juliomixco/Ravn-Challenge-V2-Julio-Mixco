@@ -1,8 +1,9 @@
 export const colors = {
-  black: '#121212',
-  dark: '#333333',
-  light: '#828282',
-  emphasis: '#EC5757',
+  black: 'var(--color-ravn-black)',
+  dark: 'var(--color-text-dark)',
+  light: 'var(--color-text-light)',
+  emphasis: 'var(--color-text-emphasis)',
+  gray6: 'var(--color-gray-6)',
 };
 
 export const font = {

@@ -17,3 +17,7 @@ export const H2LowEmphasis = styled(H2)`
 export const H2HighEmphasis = styled(H2)`
   color: ${colors.emphasis};
 `;
+
+export const LowEmphasis = styled.p`
+  color: ${colors.light};
+`;
