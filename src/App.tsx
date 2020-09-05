@@ -1,24 +1,14 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { H2, H2HighEmphasis, H2LowEmphasis } from './components/styled/Text';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <H2>H2 default</H2>
+      <H2LowEmphasis>H2 low</H2LowEmphasis>
+      <H2HighEmphasis>H2 high</H2HighEmphasis>
     </div>
   );
 }
