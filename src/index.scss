@@ -1,13 +1,64 @@
+:root {
+  --color-ravn-black: #121212;
+  --color-text-dark: #333333;
+  --color-text-light: #828282;
+  --color-text-emphasis: #ec5757;
+  --color-gray-6: #f2f2f2;
+  --header-height: 52px;
+}
+
 * {
   margin: 0;
   padding: 0;
 }
 
+*,
+*::before,
+*:after {
+  box-sizing: border-box;
+}
+
 body {
+  height: 100vh;
+  width: 100vw;
   margin: 0;
   font-family: 'Source Sans Pro', sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  padding-left: 33px;
+  width: 100%;
+  height: var(--header-height);
+  background: var(--color-ravn-black);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+
+.header-title {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.0125em;
+  color: var(--color-gray-6);
+}
+
+.page-content {
+  height: calc(100% - var(--header-height));
+  width: 100%;
+}
+
+.people-list {
+  width: 350px;
+  height: calc(100vh - 52px);
+  overflow-y: auto;
+  background: #ffffff;
+  box-shadow: 1px 0px 0px rgba(0, 0, 0, 0.15);
 }
