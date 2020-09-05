@@ -2,6 +2,8 @@ import React from 'react';
 import { PersonListContent } from './PersonList.style';
 import { Person } from '../../interfaces/person.interface';
 import { PersonItem } from '../personItem/PersonItem';
+import { LoadingIndicator } from '../loadingIndicator/LoadingIndicator';
+import { ErrorCell } from '../errorCell/ErrorCell';
 
 interface PersonListProps {
   people: Person[];
@@ -19,6 +21,8 @@ export const PersonList: React.SFC<PersonListProps> = ({
         person={p}
         onClick={() => onPersonSelected?.(p)}></PersonItem>
     ))}
+    <LoadingIndicator></LoadingIndicator>
+    <ErrorCell></ErrorCell>
   </PersonListContent>
 );
 
