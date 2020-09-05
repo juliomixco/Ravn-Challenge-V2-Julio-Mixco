@@ -1,10 +1,10 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const LowEmphasis = styled.p`
   color: var(--color-text-light);
 `;
 export const H2 = styled.h2`
-  font-family: "Source Sans Pro";
+  font-family: 'Source Sans Pro';
   font-style: normal;
   font-weight: bold;
   font-size: 17px;
