@@ -13,6 +13,7 @@ import {
 
 interface PersonCellProps {
   person: Person;
+  onClick: () => void;
 }
 
 function formatSpecies(species: Species[] = []) {
@@ -20,7 +21,7 @@ function formatSpecies(species: Species[] = []) {
 }
 
 export const PersonCell: React.SFC<PersonCellProps> = (props) => (
-  <StyledPersonCell>
+  <StyledPersonCell onClick={props.onClick}>
     <PersonCellContent>
       <PersonCellInfo>
         <H2>{props.person.name}</H2>
