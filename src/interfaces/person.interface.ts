@@ -20,3 +20,7 @@ export interface Person {
   vehicles: Vehicle[];
   starships: string[];
 }
+
+export interface PeopleData {
+  allPersons: Person[];
+}

@@ -7,11 +7,15 @@ import { ErrorCell } from '../errorCell/ErrorCell';
 
 interface PersonListProps {
   people: Person[];
+  isLoading: boolean;
+  hasError: boolean;
   onPersonSelected?: (person: Person) => void;
 }
 
 export const PersonList: React.SFC<PersonListProps> = ({
   people,
+  isLoading,
+  hasError,
   onPersonSelected,
 }) => (
   <PersonListContent>
@@ -21,8 +25,10 @@ export const PersonList: React.SFC<PersonListProps> = ({
         person={p}
         onClick={() => onPersonSelected?.(p)}></PersonItem>
     ))}
-    <LoadingIndicator></LoadingIndicator>
-    <ErrorCell></ErrorCell>
+
+    {isLoading && <LoadingIndicator></LoadingIndicator>}
+
+    {hasError && <ErrorCell></ErrorCell>}
   </PersonListContent>
 );
 
