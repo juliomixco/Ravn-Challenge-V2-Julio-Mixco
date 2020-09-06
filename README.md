@@ -1,5 +1,12 @@
 # Starwars Challenge
 
+This is a SPA that fetches all StarWars characters and display the details of a character when you select one from the side menu.
+This application has been built using React and Apollo Client. the characters are loaded in chuncks of 5 but you can change that in the environment variables.
+
+![Starwars Pagination](https://i.imgur.com/ysfosDq.gifv)
+
+![Starwars detail](https://i.imgur.com/lxXOAcH.gifv)
+
 ## Setup instructions
 
 clone this repository and then go to the root folder of the project and run one of the following command to install the dependencies.
@@ -19,9 +26,11 @@ yarn
 Create a `.env` file in the root of the project with the following content.
 
 ```
-# all variables must be prefixed with REACT_APP_
+# All variables must be prefixed with REACT_APP_
 
-REACT_APP_API_URL=https://api.graph.cool/simple/v1/swapi
+REACT_APP_API_URL=https://api.graph.cool/simple/v1/swapi\
+REACT_APP_ITEMS_PER_PAGE=5
+REACT_APP_QUERY_DELAY=500
 ```
 
 And then run the project.
@@ -39,12 +48,32 @@ yarn start
 
 The application will be launched at http://localhost:3000/.
 
+## Description
+
+This
+
+## Environment Variables
+
+The suggested default values can be found in the setup instructions
+
+| Variable Name            | Description                                                                                                 |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------- |
+| REACT_APP_API_URL        | URL pointing to the Starwars graphql API                                                                    |
+| REACT_APP_ITEMS_PER_PAGE | Number of items loaded per page on each request to the people endpoint. Should be a positive integer number |
+| REACT_APP_QUERY_DELAY    | Delay in Milliseconds between each page. Should be a positive integer number                                |
+
+[learn more about envrionment variables](https://create-react-app.dev/docs/adding-custom-environment-variables/#expanding-environment-variables-in-env)
+
+## Poject Structure
+
+## Assumptions
+
 ## Technologies
 
-- React
-- Styled Components
-- TypeScript
-- Apollo
+- [React](https://reactjs.org/)
+- [Styled Components](https://styled-components.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Apollo Client](https://www.apollographql.com/docs/react/)
 
 <details>
 <summary>
