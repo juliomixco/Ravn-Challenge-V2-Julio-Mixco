@@ -47,6 +47,8 @@ The application will be launched at http://localhost:3000/.
 This is a SPA that fetches all StarWars characters and display the details of a character when you select one from the side menu.
 This application has been built using React and Apollo Client. the characters are loaded in chuncks of 5 but you can change that in the environment variables.
 
+**[DEMO](https://juliomixco.github.io/Ravn-Challenge-V2-Julio-Mixco/)**
+
 **People pagination**
 
 ![Starwars Pagination](https://i.imgur.com/ysfosDq.gif)
