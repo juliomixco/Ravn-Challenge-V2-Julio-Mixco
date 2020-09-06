@@ -3,6 +3,7 @@ import { Species } from './species.interface';
 import { Planet } from './planet.interface';
 
 export interface Person {
+  id: string;
   name: string;
   height: string;
   mass: string;
