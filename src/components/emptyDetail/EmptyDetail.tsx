@@ -9,7 +9,7 @@ import {
 export const EmptyDetail: React.SFC<{}> = () => (
   <EmptyDetailWrapper>
     <EmptyDetailContent>
-      <EmptyDetailTitle>Select a character</EmptyDetailTitle>
+      <EmptyDetailTitle>SELECT A CHARACTER</EmptyDetailTitle>
       <EmptyDetailImage></EmptyDetailImage>
     </EmptyDetailContent>
   </EmptyDetailWrapper>

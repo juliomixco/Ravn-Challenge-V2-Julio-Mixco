@@ -26,6 +26,7 @@ export const EmptyDetailImage = styled.div`
 `;
 
 export const EmptyDetailTitle = styled.div`
+  font-family: 'STARWARS';
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
