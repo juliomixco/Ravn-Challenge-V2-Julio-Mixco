@@ -1,9 +1,14 @@
 import styled from 'styled-components';
 
-export const StyledPersonCell = styled.div`
+export const PersonCell = styled.div`
   width: 100%;
   height: 69px;
   padding-left: 16px;
+`;
+
+export const PersonCellBottomBorder = styled.div`
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 `;
 
 export const PersonCellContent = styled.div`
@@ -11,11 +16,6 @@ export const PersonCellContent = styled.div`
   align-items: center;
   padding-top: 16px;
   padding-bottom: 16px;
-`;
-
-export const PersonCellBottomBorder = styled.div`
-  width: 100%;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 `;
 
 export const PersonCellInfo = styled.div`

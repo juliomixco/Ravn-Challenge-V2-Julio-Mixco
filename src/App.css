@@ -1,0 +1,29 @@
+:root {
+  --color-ravn-black: #121212;
+  --color-text-dark: #333333;
+  --color-text-light: #828282;
+  --color-text-emphasis: #ec5757;
+  --color-gray-6: #f2f2f2;
+  --header-height: 52px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.0125em;
+  color: var(--color-text-dark);
+}

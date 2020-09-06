@@ -1,28 +1,37 @@
 import React from 'react';
-import { PersonCell } from '../personCell/PersonCell';
+import { PersonListContent } from './PersonList.style';
 import { Person } from '../../interfaces/person.interface';
+import { PersonItem } from '../personItem/PersonItem';
 import { LoadingIndicator } from '../loadingIndicator/LoadingIndicator';
 import { ErrorCell } from '../errorCell/ErrorCell';
 
-export interface PersonListProps {
+interface PersonListProps {
   people: Person[];
-  selectPerson?: (person: Person) => void;
-  isLoading?: boolean;
+  isLoading: boolean;
+  hasError: boolean;
+  onPersonSelected?: (person: Person) => void;
 }
 
-export const Personlist: React.SFC<PersonListProps> = (props) => (
-  <div className="people-list">
-    {props.people?.map((person) => (
-      <PersonCell
-        person={person}
-        onClick={() => props.selectPerson?.(person)}></PersonCell>
+export const PersonList: React.SFC<PersonListProps> = ({
+  people,
+  isLoading,
+  hasError,
+  onPersonSelected,
+}) => (
+  <PersonListContent>
+    {people.map((p) => (
+      <PersonItem
+        key={p.id}
+        person={p}
+        onClick={() => onPersonSelected?.(p)}></PersonItem>
     ))}
-    <LoadingIndicator></LoadingIndicator>
-    <ErrorCell></ErrorCell>
-  </div>
+
+    {isLoading && <LoadingIndicator></LoadingIndicator>}
+
+    {hasError && <ErrorCell></ErrorCell>}
+  </PersonListContent>
 );
 
-Personlist.defaultProps = {
-  selectPerson: () => {},
-  isLoading: false,
+PersonList.defaultProps = {
+  onPersonSelected: (person) => {},
 };

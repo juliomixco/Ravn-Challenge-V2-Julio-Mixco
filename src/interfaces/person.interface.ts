@@ -1,8 +1,9 @@
-import { Planet } from './planet.interface';
-import { Species } from './species.interface';
 import { Vehicle } from './vehicle.interface';
+import { Species } from './species.interface';
+import { Planet } from './planet.interface';
 
 export interface Person {
+  id: string;
   name: string;
   height: string;
   mass: string;
@@ -12,9 +13,11 @@ export interface Person {
   birthYear: string;
   gender: string;
   url: string;
-  films: string[];
-  starships: string[];
+  created: string;
+  edited: string;
   homeworld: Planet;
+  films: string[];
   species: Species[];
   vehicles: Vehicle[];
+  starships: string[];
 }
