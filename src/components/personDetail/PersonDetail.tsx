@@ -2,11 +2,10 @@ import React from 'react';
 import { Person } from '../../interfaces/person.interface';
 import { InfoRow } from '../infoRow/InfoRow';
 import {
-  PersonDetailWrapper,
   PersonDetailContent,
+  PersonDetailWrapper,
   SectionTitle,
 } from './PersonDetail.style';
-import { H2LowEmphasis } from '../styled/Lib';
 
 export const PersonDetail: React.SFC<{ person: Person }> = ({ person }) => {
   return (

@@ -1,4 +1,4 @@
-import { useApolloClient } from '@apollo/client';
+import { useApolloClient, ApolloQueryResult } from '@apollo/client';
 import { useEffect, useState } from 'react';
 import {
   FetchPeoplePageData,
@@ -7,34 +7,42 @@ import {
 } from '../graphql/queries';
 import { Person } from '../interfaces/person.interface';
 import { useRefState } from './useRefState';
+import { APP_CONFIG } from '../config/app.config';
 
-const itemsPerPage = 5;
-const delayQuery = 500;
+const itemsPerPage = APP_CONFIG.graphql.pageSize;
+const delayQuery = APP_CONFIG.graphql.queryDelay;
 
 export const usePeopleQuery = () => {
-  // Grab the Apollo client
   const client = useApolloClient();
   const [data, dataRef, setData] = useRefState<Person[]>([]);
   const [loading, setLoading] = useState(false);
   const [hasError, setHasError] = useState<boolean>(false);
 
-  // You can either start the query when this gets mounted or manually run it.
   useEffect(() => {
     async function runQuery(limit: number, offset: number) {
       setLoading(true);
       setHasError(false);
 
-      // Manually query your queries.
-      const queryResult = await client.query<
-        FetchPeoplePageData,
-        PageVariables
-      >({
-        query: FETCH_PEOPLE_PAGE,
-        variables: {
-          limit: limit,
-          offset: offset,
-        },
-      });
+      let queryResult: ApolloQueryResult<FetchPeoplePageData> | null = null;
+      try {
+        queryResult = await client.query<FetchPeoplePageData, PageVariables>({
+          query: FETCH_PEOPLE_PAGE,
+          variables: {
+            limit: limit,
+            offset: offset,
+          },
+        });
+      } catch (err) {
+        console.error(err);
+        setLoading(false);
+        setHasError(true);
+      }
+
+      if (!queryResult) {
+        setLoading(false);
+        setHasError(true);
+        return;
+      }
 
       const hadError = !!queryResult.error;
       // Reset the loading state.

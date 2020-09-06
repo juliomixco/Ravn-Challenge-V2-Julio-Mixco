@@ -2,14 +2,157 @@
 
 ## Setup instructions
 
-run `npm install` and then run `npm run start` the application will be launched at http://localhost:3000/
+clone this repository and then go to the root folder of the project and run one of the following command to install the dependencies.
+
+**NPM**
+
+```
+npm install
+```
+
+**YARN**
+
+```
+yarn
+```
+
+Create a `.env` file in the root of the project with the following content.
+
+```
+# All variables must be prefixed with REACT_APP_
+
+REACT_APP_API_URL=https://api.graph.cool/simple/v1/swapi\
+REACT_APP_ITEMS_PER_PAGE=5
+REACT_APP_QUERY_DELAY=500
+```
+
+And then run the project.
+
+**NPM**
+
+```
+npm run start
+```
+
+**YARN**
+
+```
+yarn start
+```
+
+The application will be launched at http://localhost:3000/.
+
+## Description
+
+This is a SPA that fetches all StarWars characters and display the details of a character when you select one from the side menu.
+This application has been built using React and Apollo Client. the characters are loaded in chuncks of 5 but you can change that in the environment variables.
+
+**[DEMO](https://juliomixco.github.io/Ravn-Challenge-V2-Julio-Mixco/)**
+
+**People pagination**
+
+![Starwars Pagination](https://i.imgur.com/ysfosDq.gif)
+
+**Person detail**
+
+![Starwars detail](https://i.imgur.com/lxXOAcH.gif)
+
+## Environment Variables
+
+The suggested default values can be found in the setup instructions
+
+| Variable Name            | Description                                                                                                 |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------- |
+| REACT_APP_API_URL        | URL pointing to the Starwars graphql API                                                                    |
+| REACT_APP_ITEMS_PER_PAGE | Number of items loaded per page on each request to the people endpoint. Should be a positive integer number |
+| REACT_APP_QUERY_DELAY    | Delay in Milliseconds between each page. Should be a positive integer number                                |
+
+Consider adding an evironment file for each environent and make sure they are ignored from git to avoid making your secrets public.
+For the use case of this project a default `.env` file is included.
+
+**Example**
+
+```
+.env.local
+.env.development
+.env.staging
+.env.production
+```
+
+[learn more about envrionment variables](https://create-react-app.dev/docs/adding-custom-environment-variables/#expanding-environment-variables-in-env)
+
+## Poject Structure
+
+This project is structured in a way that the files are easy to find and understand what's their responsibility.
+
+```
+|-- public
+|   `-- icons
+|-- src
+|   |
+|   |-- components
+|   |   |-- styled
+|   |   |   `-- Lib.tsx // Reusable design system components
+|   |   `-- myComponent
+|   |       |-- MyComponent.tsx // component file
+|   |       `-- MyComponent.style.tsx  // styled components for  MyComponent
+|   |
+|   |-- config
+|   |   `-- app.config.ts // project configuration loaded from the .env file
+|   |
+|   |-- graphql
+|   |   |-- index.ts // configuration for apollo client
+|   |   `-- queries.ts // graphql query and the interface that represents the shape of the response and the query variables
+|   |
+|   |-- hooks
+|   |   `-- useMyHook.ts // custom reusable hook
+|   |
+|   |-- interfaces
+|   |   `-- domainObjectName.interface.ts // interface that represents the shape of a domain object EX: Person, Planet ...
+|   |
+|   |-- pages
+|   |   `-- PageComponent.tsx // container component that handles a specific view
+|   |
+|   |-- App.tsx // main fileof the react application
+|   `-- index.css // global styles for the application
+|
+|-- .env //file containing the environment variables
+|
+```
+
+**file extensions**
+
+as the project grows in size consider adding more specific extensions to make it easier to identify what a file does.
+Ex: myQuery`.query.ts`
+
+| Extension        | Description                                        |
+| ---------------- | -------------------------------------------------- |
+| `*.ts`           | TypeScript file                                    |
+| `*.d.ts`         | TypeScript header definition file                  |
+| `*.interface.ts` | File containing one or multiple related interfaces |
+| `*.tsx`          | React component                                    |
+| `*.style.tsx`    | File containing styled components                  |
+
+## Assumptions
+
+- There is a folder for reusable components and another one called `pages` where the main views are stored.
+- This project is intended to work under the container/persentation components pattern.
+- The interfaces concerning the domain objects of this project are stored under the `interface` folder.
+- The people should be automaically loaded one page after another.
+- Styles should be stored in a separate file and close to the component that uses them. Unless they are global styles.
+- Colors can be changed ot themed using css variables.
+- Adding Redux to this project will be overkill because apollo cliente already caches the requests.
+- Adding a routing library will be overkill because the deatil can be loaded through a click event.
+- A single query containing all fields needed to diplat the list and the detail view.
+- In a bigger project there should be a query folder inside the `graphql` to store all the queries and its variables.
+- The interface that represent the query variables is stored in the same file to avoid importing from multiple files.
 
 ## Technologies
 
-- React
-- Styled Components
-- TypeScript
-- Apollo
+- [React](https://reactjs.org/)
+- [Styled Components](https://styled-components.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Apollo Client](https://www.apollographql.com/docs/react/)
 
 <details>
 <summary>
