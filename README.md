@@ -65,6 +65,18 @@ The suggested default values can be found in the setup instructions
 | REACT_APP_ITEMS_PER_PAGE | Number of items loaded per page on each request to the people endpoint. Should be a positive integer number |
 | REACT_APP_QUERY_DELAY    | Delay in Milliseconds between each page. Should be a positive integer number                                |
 
+Consider adding an evironment file for each environent and make sure they are ignored from git to avoid making your secrets public.
+For the use case of this project a default `.env` file is included.
+
+**Example**
+
+```
+.env.local
+.env.development
+.env.staging
+.env.production
+```
+
 [learn more about envrionment variables](https://create-react-app.dev/docs/adding-custom-environment-variables/#expanding-environment-variables-in-env)
 
 ## Poject Structure
