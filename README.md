@@ -1,16 +1,5 @@
 # Starwars Challenge
 
-This is a SPA that fetches all StarWars characters and display the details of a character when you select one from the side menu.
-This application has been built using React and Apollo Client. the characters are loaded in chuncks of 5 but you can change that in the environment variables.
-
-**People pagination**
-
-![Starwars Pagination](https://i.imgur.com/ysfosDq.gif)
-
-**Person detail**
-
-![Starwars detail](https://i.imgur.com/lxXOAcH.gif)
-
 ## Setup instructions
 
 clone this repository and then go to the root folder of the project and run one of the following command to install the dependencies.
@@ -54,7 +43,16 @@ The application will be launched at http://localhost:3000/.
 
 ## Description
 
-This
+This is a SPA that fetches all StarWars characters and display the details of a character when you select one from the side menu.
+This application has been built using React and Apollo Client. the characters are loaded in chuncks of 5 but you can change that in the environment variables.
+
+**People pagination**
+
+![Starwars Pagination](https://i.imgur.com/ysfosDq.gif)
+
+**Person detail**
+
+![Starwars detail](https://i.imgur.com/lxXOAcH.gif)
 
 ## Environment Variables
 
@@ -71,6 +69,18 @@ The suggested default values can be found in the setup instructions
 ## Poject Structure
 
 ## Assumptions
+
+- There is a folder for reusable components and another one called `pages` where the main views are stored.
+- This project is intended to work under the container/persentation components pattern.
+- The interfaces concerning the domain objects of this project are stored under the `interface` folder.
+- The people should be automaically loaded one page after another.
+- Styles should be stored in a separate file and close to the component that uses them. Unless they are global styles.
+- Colors can be changed ot themed using css variables.
+- Adding Redux to this project will be overkill because apollo cliente already caches the requests.
+- Adding a routing library will be overkill because the deatil can be loaded through a click event.
+- A single query containing all fields needed to diplat the list and the detail view.
+- In a bigger project there should be a query folder inside the `graphql` to store all the queries and its variables.
+- The interface that represent the query variables is stored in the same file to avoid importing from multiple files.
 
 ## Technologies
 
