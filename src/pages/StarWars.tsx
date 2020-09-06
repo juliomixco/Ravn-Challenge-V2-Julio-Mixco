@@ -4,6 +4,7 @@ import { PersonDetail } from '../components/personDetail/PersonDetail';
 import { PersonList } from '../components/personList/PersonList';
 import { usePeopleQuery } from '../hooks/usePeopleQuery';
 import { Person } from '../interfaces/person.interface';
+import { EmptyDetail } from '../components/emptyDetail/EmptyDetail';
 
 export const StarWars = () => {
   const [person, setPerson] = useState<Person | null>(null);
@@ -16,7 +17,11 @@ export const StarWars = () => {
         isLoading={loading}
         hasError={hasError}
         onPersonSelected={setPerson}></PersonList>
-      {person && <PersonDetail person={person}></PersonDetail>}
+      {person ? (
+        <PersonDetail person={person}></PersonDetail>
+      ) : (
+        <EmptyDetail></EmptyDetail>
+      )}
     </Layout>
   );
 };
