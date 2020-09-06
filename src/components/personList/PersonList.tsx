@@ -19,9 +19,9 @@ export const PersonList: React.SFC<PersonListProps> = ({
   onPersonSelected,
 }) => (
   <PersonListContent>
-    {people.map((p, index) => (
+    {people.map((p) => (
       <PersonItem
-        key={index}
+        key={p.id}
         person={p}
         onClick={() => onPersonSelected?.(p)}></PersonItem>
     ))}

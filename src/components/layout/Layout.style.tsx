@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const PageHeader = styled.header`
   display: flex;
@@ -22,6 +22,7 @@ export const HeaderTitle = styled.div`
 `;
 
 export const PageContent = styled.div`
+  display: flex;
   height: calc(100% - var(--header-height));
   width: 100%;
 `;
