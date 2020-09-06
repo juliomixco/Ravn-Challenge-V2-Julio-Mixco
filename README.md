@@ -108,6 +108,17 @@ This project is structured in a way that the files are easy to find and understa
 
 **file extensions**
 
+as the project grows in size consider adding more specific extensions to make it easier to identify what a file does.
+Ex: myQuery`.query.ts`
+
+| Extension        | Description                                        |
+| ---------------- | -------------------------------------------------- |
+| `*.ts`           | TypeScript file                                    |
+| `*.d.ts`         | TypeScript header definition file                  |
+| `*.interface.ts` | File containing one or multiple related interfaces |
+| `*.tsx`          | React component                                    |
+| `*.style.tsx`    | File containing styled components                  |
+
 ## Assumptions
 
 - There is a folder for reusable components and another one called `pages` where the main views are stored.
