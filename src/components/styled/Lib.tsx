@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const LowEmphasis = styled.p`
   color: var(--color-text-light);
 `;
+
 export const H2 = styled.h2`
   font-family: 'Source Sans Pro';
   font-style: normal;
@@ -15,6 +16,7 @@ export const H2 = styled.h2`
   color: var(--color-text-dark);
   margin: 0;
 `;
+
 export const H2HigEmphasis = styled(H2)`
   color: var(--color-text-emphasis);
 `;

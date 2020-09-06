@@ -2,7 +2,42 @@
 
 ## Setup instructions
 
-run `npm install` and then run `npm run start` the application will be launched at http://localhost:3000/
+clone this repository and then go to the root folder of the project and run one of the following command to install the dependencies.
+
+**NPM**
+
+```
+npm install
+```
+
+**YARN**
+
+```
+yarn
+```
+
+Create a `.env` file in the root of the project with the following content.
+
+```
+# all variables must be prefixed with REACT_APP_
+
+REACT_APP_API_URL=https://api.graph.cool/simple/v1/swapi
+```
+
+And then run the project.
+**NPM**
+
+```
+npm run start
+```
+
+**YARN**
+
+```
+yarn start
+```
+
+The application will be launched at http://localhost:3000/.
 
 ## Technologies
 

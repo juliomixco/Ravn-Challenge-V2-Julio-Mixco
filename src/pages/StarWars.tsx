@@ -9,17 +9,13 @@ export const StarWars = () => {
   const [person, setPerson] = useState<Person | null>(null);
   const { data, loading, hasError } = usePeopleQuery();
 
-  console.log('selected', person);
   return (
     <Layout>
       <PersonList
         people={data}
         isLoading={loading}
         hasError={hasError}
-        onPersonSelected={(p) => {
-          console.log(p);
-          setPerson(p);
-        }}></PersonList>
+        onPersonSelected={setPerson}></PersonList>
       {person && <PersonDetail person={person}></PersonDetail>}
     </Layout>
   );
