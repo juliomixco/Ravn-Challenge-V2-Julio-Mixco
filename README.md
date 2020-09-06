@@ -27,6 +27,7 @@ REACT_APP_QUERY_DELAY=500
 ```
 
 And then run the project.
+
 **NPM**
 
 ```
@@ -67,6 +68,45 @@ The suggested default values can be found in the setup instructions
 [learn more about envrionment variables](https://create-react-app.dev/docs/adding-custom-environment-variables/#expanding-environment-variables-in-env)
 
 ## Poject Structure
+
+This project is structured in a way that the files are easy to find and understand what's their responsibility.
+
+```
+|-- public
+|   `-- icons
+|-- src
+|   |
+|   |-- components
+|   |   |-- styled
+|   |   |   `-- Lib.tsx // Reusable design system components
+|   |   `-- myComponent
+|   |       |-- MyComponent.tsx // component file
+|   |       `-- MyComponent.style.tsx  // styled components for  MyComponent
+|   |
+|   |-- config
+|   |   `-- app.config.ts // project configuration loaded from the .env file
+|   |
+|   |-- graphql
+|   |   |-- index.ts // configuration for apollo client
+|   |   `-- queries.ts // graphql query and the interface that represents the shape of the response and the query variables
+|   |
+|   |-- hooks
+|   |   `-- useMyHook.ts // custom reusable hook
+|   |
+|   |-- interfaces
+|   |   `-- domainObjectName.interface.ts // interface that represents the shape of a domain object EX: Person, Planet ...
+|   |
+|   |-- pages
+|   |   `-- PageComponent.tsx // container component that handles a specific view
+|   |
+|   |-- App.tsx // main fileof the react application
+|   `-- index.css // global styles for the application
+|
+|-- .env //file containing the environment variables
+|
+```
+
+**file extensions**
 
 ## Assumptions
 
