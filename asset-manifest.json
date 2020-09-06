@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Ravn-Challenge-V2-Julio-Mixco/static/css/main.b1f5e050.chunk.css",
-    "main.js": "/Ravn-Challenge-V2-Julio-Mixco/static/js/main.08f0f748.chunk.js",
-    "main.js.map": "/Ravn-Challenge-V2-Julio-Mixco/static/js/main.08f0f748.chunk.js.map",
+    "main.js": "/Ravn-Challenge-V2-Julio-Mixco/static/js/main.7173018f.chunk.js",
+    "main.js.map": "/Ravn-Challenge-V2-Julio-Mixco/static/js/main.7173018f.chunk.js.map",
     "runtime-main.js": "/Ravn-Challenge-V2-Julio-Mixco/static/js/runtime-main.c25f197b.js",
     "runtime-main.js.map": "/Ravn-Challenge-V2-Julio-Mixco/static/js/runtime-main.c25f197b.js.map",
     "static/js/2.a57aba5c.chunk.js": "/Ravn-Challenge-V2-Julio-Mixco/static/js/2.a57aba5c.chunk.js",
     "static/js/2.a57aba5c.chunk.js.map": "/Ravn-Challenge-V2-Julio-Mixco/static/js/2.a57aba5c.chunk.js.map",
     "index.html": "/Ravn-Challenge-V2-Julio-Mixco/index.html",
-    "precache-manifest.d8b37d1a4d83ec792acbfedb4ee2cb0f.js": "/Ravn-Challenge-V2-Julio-Mixco/precache-manifest.d8b37d1a4d83ec792acbfedb4ee2cb0f.js",
+    "precache-manifest.d0d917583e76d7662f19509f5e11e2e6.js": "/Ravn-Challenge-V2-Julio-Mixco/precache-manifest.d0d917583e76d7662f19509f5e11e2e6.js",
     "service-worker.js": "/Ravn-Challenge-V2-Julio-Mixco/service-worker.js",
     "static/css/main.b1f5e050.chunk.css.map": "/Ravn-Challenge-V2-Julio-Mixco/static/css/main.b1f5e050.chunk.css.map",
     "static/js/2.a57aba5c.chunk.js.LICENSE.txt": "/Ravn-Challenge-V2-Julio-Mixco/static/js/2.a57aba5c.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.c25f197b.js",
     "static/js/2.a57aba5c.chunk.js",
     "static/css/main.b1f5e050.chunk.css",
-    "static/js/main.08f0f748.chunk.js"
+    "static/js/main.7173018f.chunk.js"
   ]
 }

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Ravn-Challenge-V2-Julio-Mixco/precache-manifest.d8b37d1a4d83ec792acbfedb4ee2cb0f.js"
+  "/Ravn-Challenge-V2-Julio-Mixco/precache-manifest.d0d917583e76d7662f19509f5e11e2e6.js"
 );
 
 self.addEventListener('message', (event) => {
