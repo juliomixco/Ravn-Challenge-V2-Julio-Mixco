@@ -3,9 +3,13 @@
 This is a SPA that fetches all StarWars characters and display the details of a character when you select one from the side menu.
 This application has been built using React and Apollo Client. the characters are loaded in chuncks of 5 but you can change that in the environment variables.
 
-![Starwars Pagination](https://i.imgur.com/ysfosDq.gifv)
+**People pagination**
 
-![Starwars detail](https://i.imgur.com/lxXOAcH.gifv)
+![Starwars Pagination](https://i.imgur.com/ysfosDq.gif)
+
+**Person detail**
+
+![Starwars detail](https://i.imgur.com/lxXOAcH.gif)
 
 ## Setup instructions
 
