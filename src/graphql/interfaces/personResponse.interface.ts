@@ -1,8 +1,8 @@
-import { Vehicle } from './vehicle.interface';
-import { Species } from './species.interface';
-import { Planet } from './planet.interface';
+import { Planet } from '../../interfaces/planet.interface';
+import { Species } from '../../interfaces/species.interface';
+import { Vehicle } from '../../interfaces/vehicle.interface';
 
-export interface Person {
+export interface PersonResponse {
   id: string;
   name: string;
   height: string;
@@ -18,6 +18,6 @@ export interface Person {
   homeworld: Planet;
   films: string[];
   species: Species;
-  vehicles: Vehicle[];
   starships: string[];
+  vehicleConnection: { vehicles: Vehicle[] };
 }

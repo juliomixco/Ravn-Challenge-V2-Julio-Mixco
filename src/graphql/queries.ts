@@ -1,41 +1,54 @@
 import { gql } from '@apollo/client';
-import { Person } from '../interfaces/person.interface';
+import { GqlPageInfo, GqlEdge } from './interfaces/pagination.interface';
+import { PersonResponse } from './interfaces/personResponse.interface';
 
 export interface FetchPeoplePageData {
-  allPeople: Person[];
+  allPeople: {
+    pageInfo: GqlPageInfo;
+    edges: GqlEdge<PersonResponse>[];
+  };
   paginationInfo: {
     count: number;
   };
 }
 
 export interface PageVariables {
-  limit: number;
-  offset: number;
+  first: number;
+  after: string;
 }
 
 export const FETCH_PEOPLE_PAGE = gql`
-  query FetchPeoplePage($limit: Int!, $offset: Int!) {
-    allPeople: allPersons(first: $limit, skip: $offset) {
-      id
-      birthYear
-      name
-      gender
-      height
-      hairColor
-      eyeColor
-      skinColor
-      homeworld {
-        name
+  query FetchPeoplePage($first: Int!, $after: String) {
+    allPeople(first: $first, after: $after) {
+      totalCount
+      pageInfo {
+        endCursor
+        hasNextPage
       }
-      species {
-        name
+      edges {
+        node {
+          id
+          birthYear
+          name
+          gender
+          height
+          hairColor
+          eyeColor
+          skinColor
+          homeworld {
+            name
+          }
+          species {
+            name
+          }
+          vehicleConnection {
+            vehicles {
+              name
+            }
+          }
+        }
+        cursor
       }
-      vehicles {
-        name
-      }
-    }
-    paginationInfo: _allPersonsMeta {
-      count
     }
   }
 `;

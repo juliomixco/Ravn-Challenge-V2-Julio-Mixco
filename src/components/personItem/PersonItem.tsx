@@ -29,7 +29,7 @@ export const PersonItem: React.SFC<PersonItemProps> = ({ person, onClick }) => (
       <PersonCellInfo>
         <H2>{person.name}</H2>
         <LowEmphasis>
-          {formatSpecies(person.species)} from {person.homeworld?.name}
+          {person.species?.name || ''} from {person.homeworld?.name}
         </LowEmphasis>
       </PersonCellInfo>
       <PersonCellArrow>

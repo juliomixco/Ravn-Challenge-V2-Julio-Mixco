@@ -19,7 +19,7 @@ export const usePeopleQuery = () => {
   const [hasError, setHasError] = useState<boolean>(false);
 
   useEffect(() => {
-    async function runQuery(limit: number, offset: number) {
+    async function runQuery(limit: number, after: string) {
       setLoading(true);
       setHasError(false);
 
@@ -28,8 +28,8 @@ export const usePeopleQuery = () => {
         queryResult = await client.query<FetchPeoplePageData, PageVariables>({
           query: FETCH_PEOPLE_PAGE,
           variables: {
-            limit: limit,
-            offset: offset,
+            first: itemsPerPage,
+            after,
           },
         });
       } catch (err) {
@@ -48,21 +48,26 @@ export const usePeopleQuery = () => {
       // Reset the loading state.
       setLoading(false);
       setHasError(hadError);
-      const dataLength = queryResult.data?.allPeople?.length || 0;
-      if (!hadError && dataLength > 0) {
-        setData([...dataRef.current, ...queryResult.data!.allPeople]);
-        const itemCount = queryResult.data!.paginationInfo.count;
-        const newLimit = itemsPerPage;
-        const newOffset = offset + itemsPerPage;
+      const dataLength = queryResult.data?.allPeople?.edges.length || 0;
+      if (!hadError && queryResult && dataLength > 0) {
+        const newPeople =
+          queryResult.data?.allPeople.edges.map<Person>((e) => ({
+            ...e.node,
+            vehicles: e.node.vehicleConnection.vehicles,
+          })) || [];
+        setData([...dataRef.current, ...newPeople]);
 
-        if (newOffset - newLimit >= itemCount) return;
+        if (!queryResult.data!.allPeople.pageInfo.hasNextPage) return;
 
         setTimeout(() => {
-          runQuery(newLimit, newOffset);
+          runQuery(
+            itemsPerPage,
+            queryResult!.data!.allPeople.pageInfo.endCursor
+          );
         }, delayQuery);
       }
     }
-    runQuery(itemsPerPage, 0);
+    runQuery(itemsPerPage, '');
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

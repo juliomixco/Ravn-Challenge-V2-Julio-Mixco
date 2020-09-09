@@ -5,7 +5,7 @@ import { APP_CONFIG } from '../config/app.config';
 const httpLink = new HttpLink({
   uri: APP_CONFIG.apiUrl,
   fetchOptions: {
-    mode: 'no-cors',
+    mode: 'cors',
   },
 });
 
